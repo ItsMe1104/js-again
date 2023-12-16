@@ -93,3 +93,64 @@ let str2 = String(num1);
 
 console.table([str1,str2]);
 console.table([typeof str1, typeof str2]);
+
+
+
+
+//OPERATIONS
+console.log("\n\nOperations");
+let value = 3;
+let negValue = -value;
+console.log(negValue);
+
+console.table([2+2,2-2,2*2,2/3,2**2,2%3])
+// console.log(2+2);
+// console.log(2-2);
+// console.log(2*2);
+// console.log(2/3);
+// console.log(2**2);  // power 2^2
+// console.log(2%3);   // remainder
+
+
+
+let str3 = "hello";
+let str4 = "hrithik"
+let str5 = str3 + str4;
+console.log(str5);
+
+//Everything will be converted to string except when the operation for number comes before the string (a+b +"c") = (a+b)c
+// console.log("1" + 2);   //12
+// console.log(1 + "2");   //12
+// console.log("1" + 2 + 2);  //122
+// console.log(1+2+"5");  //35
+console.table(["1" + 2,1 + "2","1" + 2 + 2,1+2+"5", "7" * "4"])
+
+
+//Tricky conversions
+console.log("\nTricky Conversions");
+console.log(3+4 * 5 % 3);    //use parantheses to improve readability
+
+console.log(true);
+console.log(+true);   //1
+// console.log(true+);    //gives error
+
+console.log(+"");
+// console.log(""+);   //gives error
+
+
+//not readable way
+let num, num2, num3;
+num = num2 = num3 = 2*2;
+
+
+//************************************************ */
+//POSTFIX AND PREFIX
+console.log("Prefix and Postfix");
+
+let gameCounter = 100;
+console.table([gameCounter++,++gameCounter]);
+
+// postfix => a++ means first use the value then increment/decrement it
+// prefix => ++a means first increment the value then use it
+
+//same goes for --a and a--
