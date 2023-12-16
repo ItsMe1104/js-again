@@ -143,7 +143,7 @@ let num, num2, num3;
 num = num2 = num3 = 2*2;
 
 
-//************************************************ */
+//***************************************** ******* */
 //POSTFIX AND PREFIX
 console.log("Prefix and Postfix");
 
