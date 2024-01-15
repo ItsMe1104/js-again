@@ -38,6 +38,7 @@ const numbers = new Array(1,2,3,4,5);
 // Array Methods
 // 1) push(x)  :- To add an element to the end.
 // Changes the original array
+//it reurns the number of elements in array after addition
 
     myArr.push(25);
     console.log("\nmyArr after pushing 25", myArr);
