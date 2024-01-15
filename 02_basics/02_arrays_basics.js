@@ -45,3 +45,11 @@ const another_arr = [1, 2, 3, [4, 5, 6], 7, [6,7, [4,5]]];
 const real_another_arr = another_arr.flat(Infinity);
 console.log("\n\nUsing flat() to destroy all the inner subarrays from another_arr :-/n",real_another_arr);
 
+
+
+
+//6) How to know if some data is Array or not so that we can loop onto it
+//use Array.isArray(x)
+//returns boolean
+
+console.log("\n\nUsing Array.isArray() to know if 'Hrithik' is array or not :-",Array.isArray("Hrithik"));
