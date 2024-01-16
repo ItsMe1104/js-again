@@ -53,3 +53,32 @@ console.log("\n\nUsing flat() to destroy all the inner subarrays from another_ar
 //returns boolean
 
 console.log("\n\nUsing Array.isArray() to know if 'Hrithik' is array or not :-",Array.isArray("Hrithik"));
+
+
+
+//7) How to convert an array from a set of elements?
+//elementscan be variables,arrays or objects
+//returns a new array
+//Use Array.of(x,y,z,...);
+
+let score1 = 100;
+let score2 = 200;
+let score3 = 300;
+
+console.log("\n\nConverting variables of score1,score2 and score3 into an array:-\n",Array.of(score1,score2,score3));
+
+
+
+//8)Converting a string into an array of characters
+//returns a new array
+//Use Array.from(x)
+
+//INTERVIEW QUESTION
+//x can be string or even objects but for objects we have to specify whether to make an array of keys or values
+//if we dont specify then it gives an empty array [] incase of object
+
+console.log("\n\nConverting string 'Hrithik' into an array of characters using Array.from() :-\n",Array.from("Hrithik"));
+
+console.log("Empty array on converting object to array using Array.from() without specifying properly\n",Array.from({
+    name: "Hrithik"
+}));
