@@ -70,4 +70,91 @@ console.log("\n\nAccessing 'full name' from JsUser2 object using brackets [] :-\
 
 
 
+
 //b) Using symbols as keys inside objects
+
+// we can simply declare key-value pair for symbol inside objects just like other data types 
+
+//while accessing with dot '.' we might get the right value for the symbol key 
+
+//But the data type of symbol key will be string and not symbol and the interviewers will not be happy
+
+
+
+
+//Declaring Symbol
+const mySym = Symbol("key1");
+
+const JsUser3 = {
+    name : "Hrithik",
+    "full name" : "Hrithik Shaw",
+    mySym : "myKey1"
+} 
+
+console.log("\n\nAccessing normal declaration of symbol key's value in object :-",JsUser3.mySym);
+console.log("The data type for the same key is string but the key is also string:-", JsUser3);
+
+
+//Inorder to get the correct syntax we have to :-
+// i) while declaring we have to put the symbol key in brackets
+// ii) while accessing we have to use brackets [] instead of dot '.'
+
+const JsUser4 = {
+    name : "Hrithik",
+    "full name" : "Hrithik Shaw",
+    [mySym] : "myKey2"
+} 
+
+console.log("\nAccessing bracket declaration of symbol key's value in object JsUser4 :-", JsUser4[mySym]);
+console.log("The data type for the same value is string but the key is symbol :-\n", JsUser4);
+
+
+
+
+//4)Overwriting values of any key inside the object
+//Simply overwrite like we overwrite in variables
+
+JsUser4.name = "Hrithik Kumar Shaw";
+console.log("\n\nOverwriting name in JsUser4 object :-\n",JsUser4);
+
+
+
+
+//5) Freezing the object so that no after changes can be made without an error
+//Use Object.freeze(obj)
+
+const JsUser5 = {
+    name: "Hrithik",
+    age : 18,
+    location : "Howrah",
+    email : "hrithik@gmail.com"
+} 
+
+Object.freeze(JsUser5);
+JsUser5.age = 23;  //wont update the value of age inside JsUser5 object
+
+console.log("\n\nFreezing UserJs5 from updating its age from 18 to 23 :-\n", JsUser5);
+
+
+
+
+//6) Adding new key-value pairs in object after declaration 
+
+JsUser4.id = 1125;
+console.log("\n\nAdding id of JsUser4 :-\n",JsUser4);
+
+
+
+//7) Adding function as a key value pair inside object
+JsUser4.greetings = function(){
+    console.log("Hello");
+}
+console.log("\n\nAdding function in JsUser4 :-\n",JsUser4);
+
+//running the function in JsUser4
+console.log("Running the function inside JsUser4 :-\n",JsUser4.greetings());
+
+
+//if we dont add parantheses after function name
+//function will not execute but its reference will be returned back
+console.log("Calling the function without parantheses inside JsUser4 :-\n",JsUser4.greetings);
