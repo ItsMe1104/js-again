@@ -19,7 +19,7 @@
 
 //Object Literals
 const JsUser = {
-    name: "Hitesh",
+    name: "Hrithik",
     age : 18,
     location : "Howrah",
     email : "hrithik@gmail.com",
@@ -71,6 +71,7 @@ console.log("\n\nAccessing 'full name' from JsUser2 object using brackets [] :-\
 
 
 
+// *******VERY IMPORTANT FOR INTERVIEW ***********8
 //b) Using symbols as keys inside objects
 
 // we can simply declare key-value pair for symbol inside objects just like other data types 
@@ -78,8 +79,6 @@ console.log("\n\nAccessing 'full name' from JsUser2 object using brackets [] :-\
 //while accessing with dot '.' we might get the right value for the symbol key 
 
 //But the data type of symbol key will be string and not symbol and the interviewers will not be happy
-
-
 
 
 //Declaring Symbol
@@ -158,3 +157,16 @@ console.log("Running the function inside JsUser4 :-\n",JsUser4.greetings());
 //if we dont add parantheses after function name
 //function will not execute but its reference will be returned back
 console.log("Calling the function without parantheses inside JsUser4 :-\n",JsUser4.greetings);
+
+
+//'this' keyword is used to reference the current object 
+console.log("\n\nCalling greetings2 function from JsUser4 object :-");
+
+JsUser4.greetings2 = function(){
+    console.log(`Hello Js User ${this["full name"]}`);
+}
+console.log(JsUser4.greetings2());
+
+
+
+
