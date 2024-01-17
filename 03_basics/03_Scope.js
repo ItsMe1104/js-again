@@ -1,12 +1,12 @@
 // JavaScript Scope is the area where a variable (or function) exists and is accessible.
 
-//Global vs local scope
+//1) Global vs local scope
 
-// Global scoped:- Everything we write directly in the JS file is global scoped
+// a) Global scoped:- Everything we write directly in the JS file is global scoped
 // For browser console and nodeJS, global scopes are different for both of them
 
 
-// Local / Block scoped :- Anything inside braces '{}' is local scoped
+// b) Local / Block scoped :- Anything inside braces '{}' is local scoped
 //Except object declaration, even functions, if-else, loops, etc have local scopes
 //inside local scope we can declare variables wih same name that are already present in global as well as other local scopes
 
@@ -62,3 +62,12 @@ console.log("d =", d);      //changed by if-else
 
 // Hence if some other module using "var" comes and changes the value of some variable in our main file then it will be a problem
 // Hence 'var' should never be used while declaring variables
+
+
+
+
+
+// 3) Major difference b/w local and global scope :-
+
+// Inside global scope we CANNOT access the variables or data of local scope unless we use var.
+// Inside local scope we CAN access the variables or data of global scope.
