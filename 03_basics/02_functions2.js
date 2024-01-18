@@ -94,3 +94,38 @@ returnSecondValue(arr);
 console.log("\nAccessing direct array's second element from returnSecondValue() :-");
 
 returnSecondValue([1100, 2500, 4136, 7982]);
+
+
+
+
+
+
+//4) Important for Interview :-
+//Can we call the function before its declaration
+
+
+// a) for normal functions :- YES WE CAN
+
+addOne(3);          //wont give any error, try console.log 
+
+function addOne(num) {
+    return num + 1;
+}
+
+addOne(5);          //wont give any error, try console.log 
+
+
+
+//b) for function expressions :- NO WE CANNOT
+//functions expressions :- functions stored in a variable
+
+
+// addTwo(5);  will give error
+const addTwo = function(num)
+{
+    return num + 2;
+}
+
+addTwo(5);     //will run successfully, try console.log
+
+//This is the concept of hoisting and execution context(discussed later)
