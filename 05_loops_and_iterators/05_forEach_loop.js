@@ -56,3 +56,41 @@ coding2.forEach(printMe);  //passing only the reference of printMe()
 
 
 //3) Printing all the three parameters of callback function together
+//1st parameter :- array element one by one in each iteration
+//2nd parameter :- corresponding index one by one in each iteration
+//3rd parameter :- whole array in every iteration
+
+console.log("3) Printing all three parameters of callback() in coding3 array :-");
+const coding3 = [ "js", "ruby", "java", "python", "cpp" ];
+
+coding3.forEach(( item, index, arr )=>{
+        console.log("item:-", item,", index:-", index,", whole array :-", arr);
+})
+
+
+
+
+
+//4) Using for each loop in an array of objects
+// Very useful in retrieving data from databases as it is usually in the form of an array of objects :-
+
+console.log("\n\n4) Accessing languageName from every object inside the array of objects myCoding :-");
+const myCoding = [
+    {
+        languageName : "javascript",
+        languageFileName : "js"
+    },
+    {
+        languageName : "java",
+        languageFileName : "java"
+    },
+    {
+        languageName : "C plus plus",
+        languageFileName : "Cpp"
+    }
+]
+
+
+myCoding.forEach((item)=>{
+    console.log(item.languageName);
+})
