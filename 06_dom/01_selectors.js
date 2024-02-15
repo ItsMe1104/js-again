@@ -225,8 +225,21 @@ const li_items = document.getElementsByClassName("list-item")
 
 //forEach and map wont work as they are not defined for HTML collections and hence will give error
 
-//In HTML collections we cannot loop to access each and every element
-//Hence we need to first convert it to an array using Array.from() function
+//In HTML collections we can only have for-loop to loop through the elements and access them through their indexes.
+//Use .length property to know its size
+
+//There is no for each loop or map
+
+
+//Using for loop to iterate in HTML collection
+console.log("4) Using for loop to print all the elements with class = 'list-item'");
+for(let i = 0; i < li_items.length; i++)
+{
+    console.log(li_items[i]);
+}
+
+
+//Hence we need to first convert it to an array using Array.from() function to use forEach and map properties.
 
 
 //**************************** */
