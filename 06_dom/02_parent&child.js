@@ -85,5 +85,76 @@ console.log("4b) Getting the parent of the first element with class = 'day' usin
 
 
 
+//5) ALL child nodes of target element :-
+//Here Node refers to the nodes from DOM tree and not merely the child elements of the target element
+// Hence no. of child nodes > child elements
+// every line break is also a node element
+
+//Use 'target_parent.childNodes' property to get all the child nodes of that target parent
+console.log("5) NODES of element with class = 'parent' using '.childNodes' property :-\n",parent.childNodes);   
+
+/*
+e.g:-1
+
+<div class="parent">   
+        <div class = "day">Monday</div>
+        <div class = "day">Tuesday</div>
+</div>
+
+For this parent
+child nodes = 5
+child elements = 2;
+
+BECAUSE :-
+
+<parent>      \n
+    <child>   \n
+    <child>   \n
+<\parent>
+
+'\n' = line breaks
+Hence, child elements + \n = 5
+
+
+//Further every child node will have its own child nodes wrapped in an HTML collection
+
+//Hence, behind the scene , the browser makes such a complex tree structure and hence web will never be totally optimised therefore we need optimised JS
+
+
+
+***************************************************************************************************************************
+e.g -> 2
+
+
+After one line break if we give another line break then it wont be counted as a node... Therefore after a line break no other adjacent line break is counted.
+
+<parent>      \n
+              \n  (not counted)
+    <child>   \n
+    <child>   \n
+<\parent>
+
+nodes = 5
+
+
+
+// ***********************************************************************************************************************************************************************************************************
+
+e.g -> Comments are also counted as nodes
+
+<parent>           \n
+    //comment      \n      (both comment and \n will be counted)
+    <child>        \n
+    <child>        \n
+<\parent>
+
+nodes = 4 (\n) + 2 (child) + 1 (comment)
+      = 7
+
+
+Whole React is based on these child nodes manipulation
+*/
+
+
 
 
