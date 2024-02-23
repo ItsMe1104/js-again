@@ -43,20 +43,20 @@
 */
 
 document.getElementById("owl").addEventListener("click", (e)=>{
-    console.log(e);
-},false)
+    console.log("owl");
+})
 
 //eventobject:- It has various properties related to the event. Mainly regarding browser events and environment events like position etc.
 
 //Properties to know
-// type, timestamp, defaultPrevented
+// type, timestamp, preventDefault
 // target, toElement, srcElement (V.V.I), currentTarget
 // clientX, clientY, screenX, screenY
 //altkey, ctrlkey, shiftkey, keyCode
 
 //type-> keyboard type events, mouse type events
 //timestamp :- to change time,date activities
-// defaultPrevented  :- to prevent the default behaviour of a tag, like navigating using anchor tag can be stopped, etc
+// preventDefault  :- to prevent the default behaviour of a tag, like navigating using anchor tag can be stopped, etc
 
 //keyCode :- to know which key got pressed from keyboard
 
@@ -83,3 +83,47 @@ document.getElementById("owl").addEventListener("click", (e)=>{
 
 //a) Event bubbling :- 
 // just like bubble it goes from (down to up)
+
+//Let's say we had an event listener on the parent, hence if that event occurs on any of its child that eent will be triggered
+//e.g -> if some eventListener is attached to <ul>, then if that event occurs to any of its li then that event will be triggered
+
+
+//hence if there is some event attached to parent, and some other event attached to its child, then,
+
+// i) on parent event :- only parent event happens
+
+
+// ii) on child event :- both parent and child event will happen
+
+
+document.getElementById("images").addEventListener("click", ()=>{
+    console.log("Parent(ul) here");
+})
+
+//for event bubbling
+const river = document.getElementById("river");
+
+//for event capturing
+const photoshop = document.getElementById("photoshop");
+
+
+// order:- (depends on event propogation)
+
+// a) if event bubbling :-
+// third parameter of child EventListener is false, or by default
+// first child event then parent event
+
+river.addEventListener("click",(e)=>{
+    console.log("Child(river) here using event bubbling.");
+},true);
+
+
+
+
+// b) if event capturing :-
+// third parameter is true
+// first child event then parent event
+
+photoshop.addEventListener("click",(e)=>{
+    console.log("Child(photoshop) here using event capturing.")
+},true);
