@@ -16,6 +16,17 @@ images_parent.addEventListener("click",(e)=>{
     //since we need to remove the whole li , else the bullet points will stay and the image will be deleted if we delete event.target only
 
     let ele = e.target.parentNode;
-    ele.remove();
+
+    //since we want only the <li> with image to be removed when clicked on the image and not any other <li> tag 
+    //hence we need to put a check that to remove the <li> only when clicked on an image
+    
+    //hence first console.log "e.target.tagName" to know the tagName of current target node and then use an if condition 
+
+    if(e.target.tagName == "IMG")
+    { 
+        ele.remove();
+    }
+
+    e.preventDefault();
 })
 
