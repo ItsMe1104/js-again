@@ -96,10 +96,6 @@ document.getElementById("owl").addEventListener("click", (e)=>{
 // ii) on child event :- both parent and child event will happen
 
 
-document.getElementById("images").addEventListener("click", ()=>{
-    console.log("Parent(ul) here");
-})
-
 //for event bubbling
 const river = document.getElementById("river");
 
@@ -110,20 +106,86 @@ const photoshop = document.getElementById("photoshop");
 // order:- (depends on event propogation)
 
 // a) if event bubbling :-
-// third parameter of child EventListener is false, or by default
+// third parameter parent EventListener is false, or by default
 // first child event then parent event
+
+
+//PARENT :-
+//    document.getElementById("images").addEventListener("click", ()=>{
+//        console.log("Parent(ul) here");
+//    },false)
 
 river.addEventListener("click",(e)=>{
     console.log("Child(river) here using event bubbling.");
-},true);
+},false);
+
 
 
 
 
 // b) if event capturing :-
-// third parameter is true
-// first child event then parent event
+// third parameter of child and parent eventListener is true
+// first parent event then child
+
+
+//PARENT :-
+//    document.getElementById("images").addEventListener("click", ()=>{
+//        console.log("Parent(ul) here");
+//    },true)
 
 photoshop.addEventListener("click",(e)=>{
     console.log("Child(photoshop) here using event capturing.")
-},true);
+},false);
+
+
+//NOTE:- If the parent is in capturing mode i.e third parameter = true
+//No matter if the child is in bubbling mode, still the propogation will be from parent to child
+//All the capturing elements are propogated before the target element and then the bubbling elements are propogated after the target element
+
+/* what if? 
+
+grandparent = capturing
+parent = bubbling
+child = whatever
+
+Clicked on child :-
+Propogation:-
+Grandparent -> Child -> parent
+
+//since the grandparent of child was on capturing mode hence grandparent got propogated before child.
+//parent of child was on bubbling mode hence parent got propogated after child.
+*/
+
+
+
+
+// c) e.stopPropgation() :-
+// requires the help of event object
+// if applied on the child than propogation will happen from down to up.
+//Only the child event will be executed
+//only happens if the parent is in bubbling phase as it only stops from going up. 
+
+const prayer = document.getElementById("prayer");
+prayer.addEventListener("click",(e)=>{
+console.log("Child(prayer) :- No propogation will take place");
+e.stopPropagation();
+});
+
+
+
+
+//******************************************************************************************************************************************************************************* */
+
+// 3) preventDefault() :-
+// It is invoked with the help of event object --> "e.preventDefault()"
+// When applied on an eventListener, it will prevent all the natural behaviour of that target element when that event occurs
+//e.g -> if we dont want that clicking on <a> tag, takes us to the webage connected to it.
+
+const google = document.querySelector("#google");
+google.addEventListener("click",(e)=>{
+    
+    console.log("Clicked on Google");
+    e.stopPropagation();
+
+    e.preventDefault();
+})
