@@ -69,7 +69,12 @@ clearInterval(print);
 
 
 // ***************************************************************************************************************************************************************************************************
-//Using clearInterval with EventListener
+
+
+
+
+
+//4) Using clearInterval with EventListener
 
 
 //Assignment to start printing your name along with current date when we click on Start button and to Stop it when we click on Stop button
@@ -81,6 +86,7 @@ let print_name_date;
 
 
 //To start printing
+//Target the start button
 start.addEventListener("click",()=>{
     console.log("Start clicked");
     print_name_date = setInterval(()=>{
@@ -90,6 +96,7 @@ start.addEventListener("click",()=>{
 
 
 //To stop printing
+//Target the stop button
 const stop = document.querySelector("#stop");
 stop.addEventListener("click",()=>{
     console.log("Stop clicked");
