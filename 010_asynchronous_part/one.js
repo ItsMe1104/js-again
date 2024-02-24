@@ -43,12 +43,12 @@ setTimeout(sayHrithik, 3000);
 //e.g :- change the heading to "Welcome Everyone" from "Javascript Learnings" after 3 second of loaded website
 //Same process happens when we see a popup for ads after few seconds of us loading a website 
 
-const changeHeading = ()=>{
+const changeHeading1 = ()=>{
     document.querySelector("h1").innerHTML = "Welcome Everyone";
 }
 //Now use this function as callback to setTimeout function
 
-setTimeout(changeHeading,3000);
+setTimeout(changeHeading1,3000);
 
 
 
@@ -71,6 +71,7 @@ const makeItStop = setTimeout(() => {
 }, 2000);
 
 clearTimeout(makeItStop);
+//Note :- we have to send the reference of the whole setInterval() and not of the callback inside it
 
 
 
@@ -84,17 +85,17 @@ clearTimeout(makeItStop);
 //But whats the point of than using setTimeout() if we have to define clearTime()?
 // Hence define clearTimeout() only in the happening of some event
 
-//e.g :- Change the heading from 
-//But stop when the user clicks on the stop button
+//e.g :- Change the 2nd heading of h2 after 3 seconds from "The Second Heading will change after 3 seconds" to "Heading 2 Changed"
+//But dont change if the user clicks on the stop button before 3 seconds
 
 const changeHeading2 = ()=>{
     document.querySelector("h2").innerHTML = "Heading 2 Changed";
 }
 
-setInterval(changeHeading2,3000);
+const heading_change = setInterval(changeHeading2,3000);
 
 
 document.querySelector("#stop").addEventListener("click",()=>{
-    clearTimeout(changeHeading2);
+    clearTimeout(heading_change);
     console.log("Stopped");
 })
