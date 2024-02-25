@@ -39,16 +39,25 @@ console.log("\nUsing toLocaleString() :\n" + myDate.toLocaleString());
 console.log("\nUsing toDateString() :\n" + myDate.toDateString());
 
 
-//d) use LocaleDateString()   --> IMP
+//d) use toLocaleDateString()   --> IMP
+//To get the Date separately out of whole Date and Time readable format
 console.log("\nUsing toLocaleDateString\() :\n" + myDate.toLocaleDateString());
 
 
-//e) use toJSON()   --> IMP
+//e) use toLocaleTimeString()     --> IMP
+//To get the time separately out of whole Date and Time readable format
+console.log("\nUsing toLocaleTimeString\() :\n" + myDate.toLocaleTimeString());
+
+
+//f) use toJSON()   --> IMP
 console.log("\nUsing toJSON() :\n" + myDate.toJSON());
 
 
-//f) use ISOString()  
+//g) use ISOString()  
 console.log("\nUsing toISOString() :\n" + myDate.toISOString());
+
+
+
 
 
 // **************************************************************
