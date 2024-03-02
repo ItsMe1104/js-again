@@ -61,21 +61,48 @@ xhr.onreadystatechange = function(){
 //************************************************************************************************************************** */
 
 
-//To get our response from the server in Text format
+//To get our response from the server in Text format (mostly)
 
 // use this.responseText or XMLHttpRequest.responseText inside the function
 //But only use it  when the state has reached 4
-xhr.onreadystatechange = function()
-{
-    console.log(xhr.readyState);
 
-    if(xhr.readyState == 4)
-    {
-      if(xhr.readyState == 4)
-      {
-        console.log(this.responseText);
-      }
-    }
+//   xhr.onreadystatechange = function()
+//   {
+//       console.log(xhr.readyState);
+
+//       if(xhr.readyState == 4)
+//       {
+//         if(xhr.readyState == 4)
+//         {
+//           console.log(this.responseText);
+//         }
+//       }
+//    }
+
+
+
+// Since this response is in form of string
+// Inorder to access any key's value using dot operator we must convert it into JSON first 
+// use JSON.parse(string_data) method
+
+xhr.onreadystatechange = function () {
+  
+  if(xhr.readyState == 4)
+  {
+    console.log("Type of responseText :- ",typeof this.responseText);
+    const data = JSON.parse(this.responseText)
+
+    console.log("followers :- ",data.followers);
+  }
 }
 
+
+
+
+
+//Story about console.log()
+
+// console.log() or the console api is not the part of Javascript
+// Similarly document object is also not the part of core Javascript
+//console.log() is actually a debugging tool injected by runtime environment
 
