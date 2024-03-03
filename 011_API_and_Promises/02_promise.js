@@ -63,3 +63,89 @@ const promiseTwo = new Promise((resolve,reject)=>{
 promiseTwo.then(()=>{
     console.log("Promise consumed");
 })
+
+
+
+
+
+//************************************************************************************************************************************************ */
+
+
+//3) Without referencing a promise
+
+new Promise((resolve, reject)=>{
+    setTimeout(() => {
+        console.log("Async task2");
+        resolve();
+    }, 1000);
+})
+.then(function() {
+    console.log("Async 2 resolved");
+})
+
+
+
+
+
+// ************************************************************************************************************************************************************************************************************
+
+
+
+
+//4) Passing data received in the asynchronous operation like in network call
+//the data received will always be passed using resolve()
+//This data will always be received by then()
+
+const promiseThree = new Promise((resolve,reject)=>{
+
+    setTimeout(() => {
+
+        console.log("Async task 3 :-");
+        resolve({username: "Hrithik", email : "hrithik_shaw@gmail.com"})
+    }, 2000);
+})
+
+promiseThree.then((data)=>{
+    //printing the object
+    console.log(data);
+})
+
+
+
+
+//5) 
+
+
+const promiseFour = new Promise((resolve,reject)=>{
+
+    setTimeout(() => {
+
+        console.log("Async task 4:-");
+        resolve({username: "Hrithik", email : "hrithik_shaw@gmail.com"})
+    }, 2500);
+})
+
+
+
+promiseFour.then((data)=>{
+    //printing the object
+    console.log(data.username);
+
+    //to return
+    return data.username;
+})
+.then((username)=>{
+    console.log(username);
+})
+
+//Note :- wont work
+/*
+    const username = promiseFour.then((data)=>{
+
+        return data.username;
+    })
+
+    console.log(username);
+
+
+*/
