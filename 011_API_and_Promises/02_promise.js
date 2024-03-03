@@ -32,8 +32,34 @@ const promiseOne = new Promise(function(resolve, reject) {
 
 
 //************************************************************************************************************************* */
+
+
+
 // 2) Consuming the promise
 // .then() is used to consume promises
-// . then() has clear relation with resove
+// .then(a)
+// a --> callback
 
-// .then(a,b)
+
+// . then() has clear relation with resolve
+//Inorder to connect the then() and resolve
+// --> we use the resolve() method inside the created promise
+//resolve method can also pass data to the then function
+
+//first the callback inside the created promise will run and then only the callback inside then() will run
+
+
+const promiseTwo = new Promise((resolve,reject)=>{
+    
+    setTimeout(() => {
+        console.log("Async task is complete");
+
+        resolve();
+    }, 1000);
+
+    
+})
+
+promiseTwo.then(()=>{
+    console.log("Promise consumed");
+})
