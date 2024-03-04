@@ -118,3 +118,14 @@ return response.json();
 .catch((error)=>{
     console.log(error);
 })
+
+
+
+
+//INTERVIEW QUESTION
+//-> If we requested through a promise and we got an error code :- 404
+//Where will it be headed? resolve or reject?
+// --> Resolved
+//fetch() promise does not reject on HTTP errors
+// A then() handler must check the response and its properties
+// Error is only in the case browser was not able to request
