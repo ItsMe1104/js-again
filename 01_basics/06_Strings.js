@@ -69,9 +69,24 @@ console.log(newStr);
 
 
 //*** Getting substring in modern day
-//using .slice(start_index, no. of characters)
-//we can use negative indexes to get from back
+// using .slice(start_index, end_index)
+// end_index character is not included.
+const anotherString = gameName.slice(3,7);
+console.log("\n\nUsing split() :-",anotherString);
+
+//If we dont give end_index, it will take end_index = length of string (n)
+const anotherString = gameName.slice(3);
+console.log(anotherString);
+
+
+//we can use negative indexes to no. of characters from back
 const anotherString = gameName.slice(-5)   //5 characters from back
+console.log(anotherString);
+
+// In case of negative indexes
+//using .slice( no. of characters from back, end_index)
+// end_index character is not included.
+const anotherString = gameName.slice(-8,9)   //8 characters from back and till 9th index (excluding 9)
 console.log(anotherString);
 
 
