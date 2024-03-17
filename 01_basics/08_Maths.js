@@ -62,16 +62,16 @@ console.log("Max value = " + Math.max(9,13,4,12,17,12,-3));
 
 //7) To generate random numbers
 // use random()
-// it always gives value between 0 and 1
+// it always gives value between 0 and 1 (excluding 1)
 console.log("Random value between 0 and 1 = " + Math.random());
 
 
-//to get random value between 0 and 10
+//to get random value between 0 and 10 
 //use Math.random() * 10
 console.log("Random value between 0 and 10 = " + (Math.random() * 10));
 
 
-//to get random value between 1 and 10
+//to get random value between 1 and 11 (excluding 11)
 //use [(Math.random() * 10) + 1]   (use braces to avoid bodmas)
 console.log("Random value between 1 and 10 = " + (Math.random() * 10 + 1));
 
