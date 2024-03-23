@@ -94,8 +94,29 @@ user3.getUserDetails();
 
 
 
-//constructor functions :-
 
+
+//********************************************************************************************************************************************************************************************************************** */
+
+
+//Constructor functions :-
 const promiseOne = new Promise();
 const date = new Date();
 
+
+// --> this new keyword is the constructor function
+// --> It allows us to make multiple instances from same object literal
+
+
+
+
+// Using functions without constructor
+
+function User(username, loginCount, isLoggedIn) {
+    
+    this.username = username;
+    this.loginCount = loginCount;
+    this.isLoggedIn = isLoggedIn;
+
+    return this;
+}
