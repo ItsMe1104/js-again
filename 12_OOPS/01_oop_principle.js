@@ -116,7 +116,7 @@ const date = new Date();
 function User(username, loginCount, isLoggedIn) {
     
     //good convention to use the same name
-    //use this to define current context
+    //use 'this' to define current context
     //no need of let or const
     //LHS = variable
     //RHS = what we are passing
