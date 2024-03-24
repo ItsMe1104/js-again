@@ -41,7 +41,7 @@ multiplyBy5.abc = 2;
 
 console.log(multiplyBy5(5))   // 25 
 console.log(multiplyBy5.abc);   // 2
-console.log(multiplyBy5.prototype); // {} = object
+console.log(multiplyBy5.prototype); // {} = object, it contains all the properties of the prototype + the properties came due to this (e.g this.username = username)
 
 
 //Points :-
@@ -54,8 +54,38 @@ console.log(multiplyBy5.prototype); // {} = object
 
 //******************************************************************************************************************************************************************** */
 
+// 3) Function and this with prototype :-
 
-function createUser() {
-    
+function createUser(username, price) {
+    this.username = username;
+    this.price = price;
 }
 
+
+//Normally, in Array , String, we get so many functionalities(properties) from Prototype by default like .slice() , .map() , etc.
+
+// Similarlies in function, can we inject some functionalities(properties) through its prototype?
+// ==> YES, since function afterall is also an object
+
+
+//going object inside object 
+createUser.prototype.increment = function() {
+    // price++;      wont work since it doesnt know about any price variable, since we are not passing it as a parameter
+
+    this.price++;   //will work, because the current context of increment() is createUser()
+}
+
+
+createUser.prototype.printMe = function(){
+    
+    //since we didnt pass price in
+    console.log(`price is ${this.price}`);
+}
+
+const chai = createUser("chai", 25);
+const tea = createUser("Tea", 250);
+
+
+//calling the injected function
+// since like in Arrays, we just access the prototype properties using '.' only
+// e.g :- .map(), .slice()
