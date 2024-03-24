@@ -102,7 +102,7 @@ const tea = new createUser("Tea", 250);
 //won't work till we use the new keyword
 // Because since we defined the increment() and printMe() functions outside the createUser()
 // Hence even though they are injected in createUser()
-// the variables at the time of getting initialized from the function createUser() doesn't know about the injected function properties
+// the variables at the time of getting initialized from the function createUser() doesn't know about the injected function properties and will give error due to undefined function calls
 // Hence, this problem is taken care of by 'new' keyword at the time of declaring variable which invokes the constructor.
 // If the increment() and printMe() functions were defined inside the createUser(), then this problem could have been solved without "new" keyword.
 
