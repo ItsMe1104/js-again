@@ -6,7 +6,7 @@
 //It is prototype, through which we got "new" keyword, classes, this , prototypal inheritance or inheritance
 
 
-//Every object type datatype (Array, String, Object) has a prototype of its own, and it forms a chain of referenced prototypes i.e 
+//Every datatype (Array, String, Object, Number, Boolean, etc) has a prototype of its own, and it forms a chain of referenced prototypes i.e 
 // Every prototype has a reference of its parent prototype also
 
 // e.g :- Array 
@@ -19,7 +19,7 @@
 
 //Hence the parent prototype of Object is null
 //Hence, Array and String, both have a refence of their parent prototype that is object
-// Even primitive data types declared through new keyword is also a child of object, hence they will alo contain a prototype and will also ccontain the prototype reference of Object, e.g :- Number, Boolean, etc
+// Even primitive data types is also a child of Obbject, hence they will also contain a prototype and will also ccontain the prototype reference of their parent i.e Object, e.g :- number, boolean, etc
 
 
 
@@ -112,4 +112,23 @@ console.log("\nPrice of chai is :-");chai.printMe();
 tea.increment();
 console.log("Price of tea is :-");
 tea.printMe();  
+
+
+
+//Short Summary :-
+
+/*
+//Functionality of new keyword:-
+
+Here's what happens behind the scenes when the new keyword is used:
+
+A new object is created: The new keyword initiates the creation of a new JavaScript object.
+
+A prototype is linked: The newly created object gets linked to the prototype property of the constructor function. This means that it has access to properties and methods defined on the constructor's prototype.
+
+The constructor is called: The constructor function is called with the specified arguments and this is bound to the newly created object. If no explicit return value is specified from the constructor, JavaScript assumes this, the newly created object, to be the intended return value.
+
+The new object is returned: After the constructor function has been called, if it doesn't return a non-primitive value (object, array, function, etc.), the newly created object is returned.
+
+*/
 
