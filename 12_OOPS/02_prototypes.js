@@ -1,6 +1,6 @@
 // 1) Prototypal behaviour
 
-// Js possesses prototypal behaviour ,i.e above and above
+// Js possesses protot-ypal behaviour ,i.e above and above
 // --> It means it keeps on searching for an items in the upper layers, till it finds it
 // --> That is, it accesses an element's parent, grandparents, etc till it finds the thing it is looking for
 //It is prototype, through which we got "new" keyword, classes, this , prototypal inheritance or inheritance
@@ -70,7 +70,7 @@ function createUser(username, price) {
 
 //going object inside object 
 createUser.prototype.increment = function() {
-    // price++;      wont work since it doesnt know about any price variable, since we are not passing it as a parameter
+    // price++;      wont work since it doesnt know about which price variable (parameter or variable)
 
     this.price++;   //will work, because the current context of increment() is createUser()
 }
@@ -78,14 +78,38 @@ createUser.prototype.increment = function() {
 
 createUser.prototype.printMe = function(){
     
-    //since we didnt pass price in
+    //since we dont know which price (parameter or our variable)
     console.log(`price is ${this.price}`);
 }
 
-const chai = createUser("chai", 25);
-const tea = createUser("Tea", 250);
 
+// const chai = createUser("chai", 25);
+// const tea = createUser("Tea", 250);
+// won't work till we use the 'new' keyword (Reason below)
+
+
+const chai = new createUser("chai", 25);
+const tea = new createUser("Tea", 250);
 
 //calling the injected function
-// since like in Arrays, we just access the prototype properties using '.' only
-// e.g :- .map(), .slice()
+
+// since like in Arrays, we just access the prototype properties using '.' only (e.g :- .map(), .slice())
+// hence we can call the injected frunction property directly without using '.prototype' in between as JS takes care of that
+
+
+
+//V.V.I (interviews)
+//won't work till we use the new keyword
+// Because since we defined the increment() and printMe() functions outside the createUser()
+// Hence even though they are injected in createUser()
+// the variables at the time of getting initialized from the function createUser() doesn't know about the injected function properties
+// Hence, this problem is taken care of by 'new' keyword at the time of declaring variable which invokes the constructor.
+// If the increment() and printMe() functions were defined inside the createUser(), then this problem could have been solved without "new" keyword.
+
+chai.increment();
+console.log("\nPrice of chai is :-");chai.printMe();       
+
+tea.increment();
+console.log("Price of tea is :-");
+tea.printMe();  
+
