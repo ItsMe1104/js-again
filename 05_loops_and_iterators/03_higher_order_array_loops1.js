@@ -1,5 +1,5 @@
 // 1) for-of loop :-just like for each loop in Cpp or Java
-// Array, objects, strings are iterable normally but for-of loop doesnt work in objects 
+// Array, objects, strings are iterable normally but for-of loop doesnt work in objects unless we iterate on its entries using Object.entries() 
 // Though maps are not iteratable but still for-of loops works in that
 // mostly these are array specific loop
 // mostly api calls will give ["","",""] or [{},{},{}]
@@ -7,7 +7,7 @@
     for (const iterator of object) 
     {...}
 */
-//here object doesnt mean object data type only but every datat type that is iterable like Array,objects,strings
+//here object doesnt mean object data type only but every data type that is iterable like Array,objects,strings
 
 
 
@@ -90,3 +90,11 @@ const myObject2 = {
 //     console.log(`${key} -> ${value}`);
 // }
 // Will give error
+
+
+//6) To iterate we must iterate on its entries using :-
+// Object.entries(obj_name)
+
+for (const [key,value] of Object.entries(myObject2)) {
+    console.log(`${key} -> ${value}`);
+}
