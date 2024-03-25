@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+<body>
+    <button>Button Clicked</button>
+</body>
+<script>
+    class React{
+        constructor(){
+            this.library = "React"
+            this.server =  "https://localhost:3000"
+
+            //requirement
+            document
+            .querySelector('button')
+
+            .addEventListener("click",this.handleClick.bind(this))
+
+        }
+
+        handleClick(){
+            console.log("button clicked");
+
+            //'this' here will refer the button tag that called it, which we got from query Selector
+            //mainly happens in eventListener functions
+            //hence it does not have any server property
+            //hence we would have to bind / attach current this with the above this to get server
+            //hence we used this.handleClick.bind(this) above
+
+            //since we used bind, it will get the current context, i.e the button as well as the context of class React attached , hence we can access class's server property from inside the eventlistener function also
+            console.log(this);
+
+        }
+    }
+
+    //Requirement
+    // ==> whenever the page is loaded an object is created, and we get the reference of button
+    // ==> we have a method which tell us on click that the button is clicked and print us server info
+
+    const app = new React()
+</script>
+</html>
